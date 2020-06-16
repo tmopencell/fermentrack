@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import redirect
 from django.http import JsonResponse
 from django.urls import reverse
 from django.core.exceptions import ObjectDoesNotExist
@@ -28,7 +28,7 @@ def getGravitySensors(req, device_id=None):
 
         temp, temp_format = dev.retrieve_loggable_temp()
         if temp is None:
-            temp_string = "--.-&deg; -"
+            temp_string = "--.-&deg;"
         else:
             temp_string = "{}&deg; {}".format(temp, temp_format)
 
